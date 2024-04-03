@@ -15,10 +15,10 @@
       <button type="button" class="btn btn-primary" (click)="onDisplayDetails()">Display Details</button>
       <p *ngIf="displayDetails">Secret password = tuna</p>
       <ul>
-        <li *ngFor="let n of clickLog"
-            [ngStyle]="{backgroundColor: getBackgroundColor(n)}"
-            [ngClass]="{'text-white': n >= 5}">
-          {{n}}
+        <li *ngFor="let date of clickLog; let i = index"
+            [ngStyle]="{backgroundColor: getBackgroundColor(i)}"
+            [ngClass]="{'text-white': i >= 4}">
+          {{date}}
         </li>
       </ul>
     </div>

@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   displayDetails: boolean = false;
-  clickLog: Array<number> = [];
+  clickLog: Array<Date> = [];
 
   onDisplayDetails() {
     this.displayDetails = !this.displayDetails;
-    this.clickLog.push(this.clickLog.length + 1);
+    this.clickLog.push(new Date());
   }
 
-  getBackgroundColor(n: number) {
-    if (n >= 5) {
+  getBackgroundColor(index: number) {
+    if (index >= 4) {
       return 'blue';
     } else {
       return 'transparent';
